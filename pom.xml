@@ -9,6 +9,8 @@
     <version>1.0.0</version>
     <modules>
         <module>rookie-javase</module>
+        <module>rookie-netty</module>
+
         <module>rookie-rxjava</module>
 
     </modules>
