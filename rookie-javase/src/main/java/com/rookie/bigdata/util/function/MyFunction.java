@@ -4,7 +4,7 @@ import java.util.function.Function;
 
 /**
  * @Classname MyFunction
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2021/10/25 17:52
  * @Version 1.0

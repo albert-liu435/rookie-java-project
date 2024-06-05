@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 /**
  * @Class PredicateTest
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/5 17:42
  * @Version 1.0

@@ -4,7 +4,7 @@ import java.util.function.Supplier;
 
 /**
  * @Classname SupplierImpl
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2021/10/22 17:22
  * @Version 1.0

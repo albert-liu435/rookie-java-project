@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 
 /**
  * @Class ConsumerAcceptTest
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/5 17:48
  * @Version 1.0

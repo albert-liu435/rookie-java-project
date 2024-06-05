@@ -9,7 +9,7 @@ import java.util.function.BinaryOperator;
 
 /**
  * @Class BinaryOperatorTest
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/5 17:46
  * @Version 1.0

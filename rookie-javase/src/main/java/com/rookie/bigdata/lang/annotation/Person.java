@@ -2,7 +2,7 @@ package com.rookie.bigdata.lang.annotation;
 
 /**
  * @Classname Person
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2021/10/22 16:52
  * @Version 1.0

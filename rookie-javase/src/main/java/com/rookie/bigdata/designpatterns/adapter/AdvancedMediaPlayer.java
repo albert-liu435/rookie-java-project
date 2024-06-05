@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.adapter;
 
 /**
  * @Class AdvancedMediaPlayer
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 15:27
  * @Version 1.0
