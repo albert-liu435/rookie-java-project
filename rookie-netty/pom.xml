@@ -28,7 +28,11 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>${netty_version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
