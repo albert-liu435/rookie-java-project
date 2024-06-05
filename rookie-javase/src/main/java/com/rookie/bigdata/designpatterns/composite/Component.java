@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.composite;
 
 /**
  * @Class Component
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 16:05
  * @Version 1.0

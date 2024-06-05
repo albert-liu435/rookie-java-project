@@ -11,7 +11,7 @@ package com.rookie.bigdata.designpatterns.singleton;
  * 所以衍生出了 双检锁/双重校验锁(DCL，即 Double-Checked Locking) 的方式
  *
  * @Class LazySingleton
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 14:23
  * @Version 1.0

@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.state.state;
 
 /**
  * @Class CheckedInState
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 17:16
  * @Version 1.0

@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.mediator.two;
 
 /**
  * @Class ClassLeader
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 17:37
  * @Version 1.0

@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.factory.factorymethod;
 
 /**
  * @Class DeskTop
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 14:35
  * @Version 1.0

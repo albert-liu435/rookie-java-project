@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.bridge.pay;
 
 /**
  * @Class PayFingerprintMode
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2024/5/30 17:02
  * @Version 1.0

@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.composite.transparent;
 
 /**
  * @Class Client
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 17:07
  * @Version 1.0

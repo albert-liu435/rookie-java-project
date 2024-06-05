@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.singleton;
 
 /**
  * @Class InnerSingletonInnerSingleton
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 14:25
  * @Version 1.0

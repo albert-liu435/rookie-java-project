@@ -14,7 +14,7 @@ package com.rookie.bigdata.designpatterns.singleton;
  * 也不能通过 reflection attack 来调用私有构造方法
  *
  * @Class EnumSingleton
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 14:14
  * @Version 1.0

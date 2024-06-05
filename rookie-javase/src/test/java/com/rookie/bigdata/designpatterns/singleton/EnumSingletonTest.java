@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Class EnumSingletonTest
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 14:16
  * @Version 1.0

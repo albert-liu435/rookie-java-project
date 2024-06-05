@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.bridge.pay;
 
 /**
  * @Class ZfbPay
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2024/5/30 17:03
  * @Version 1.0

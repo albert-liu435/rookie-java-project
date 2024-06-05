@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.composite.transparent;
 
 /**
  * @Class Leaf
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 17:07
  * @Version 1.0
@@ -25,7 +25,7 @@ public class Leaf extends Component {
      */
     @Override
     public void printStruct(String preStr) {
-        // TODO Auto-generated method stub
+        //  Auto-generated method stub
         System.out.println(preStr + "-" + name);
     }
 
