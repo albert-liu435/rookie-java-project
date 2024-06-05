@@ -22,7 +22,7 @@ public class PersonInvocationHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args)
             throws Throwable {
-        // TODO Auto-generated method stub
+        //  Auto-generated method stub
         System.out.println("before time to eat");
         method.invoke(obj, args);
         System.out.println("after time to eat");

@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.iterator;
 
 /**
  * @Class Aggregate
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 17:40
  * @Version 1.0

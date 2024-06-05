@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.builder.chain;
 
 /**
  * @Class User
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 17:22
  * @Version 1.0

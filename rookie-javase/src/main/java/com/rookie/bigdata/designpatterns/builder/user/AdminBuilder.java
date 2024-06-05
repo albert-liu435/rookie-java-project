@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.builder.user;
 
 /**
  * @Class AdminBuilder
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 17:20
  * @Version 1.0

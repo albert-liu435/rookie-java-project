@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.adapter;
 
 /**
  * @Class AudioPlayer
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 15:46
  * @Version 1.0

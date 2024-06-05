@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.strategy;
 
 /**
  * @Class PayPalStrategy
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 9:38
  * @Version 1.0
