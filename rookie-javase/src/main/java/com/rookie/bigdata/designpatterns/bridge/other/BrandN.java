@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.bridge.other;
 
 /**
  * @Class BrandN
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 17:29
  * @Version 1.0

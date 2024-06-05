@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.bridge;
 
 /**
  * @Class SiteMessage
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 15:59
  * @Version 1.0

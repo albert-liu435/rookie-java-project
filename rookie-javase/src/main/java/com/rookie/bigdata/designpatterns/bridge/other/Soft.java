@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.bridge.other;
 
 /**
  * @Class Soft
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 17:27
  * @Version 1.0

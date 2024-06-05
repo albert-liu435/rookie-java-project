@@ -2,7 +2,7 @@ package com.rookie.bigdata.designpatterns.bridge;
 
 /**
  * @Class IMessage
- * @Description TODO
+ * @Description
  * @Author rookie
  * @Date 2023/5/6 15:58
  * @Version 1.0
