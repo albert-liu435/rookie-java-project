@@ -43,7 +43,7 @@ public class SyncWrite {
         String requestId = UUID.randomUUID().toString();
         request.setRequestId(requestId);
 
-        //
+        //将请求ID和future放入到map中
         WriteFuture<Response> future = new SyncWriteFuture(request.getRequestId());
         SyncWriteMap.syncKey.put(request.getRequestId(), future);
 
@@ -55,6 +55,7 @@ public class SyncWrite {
 
     private Response doWriteAndSync(final Channel channel, final Request request, final long timeout, final WriteFuture<Response> writeFuture) throws Exception {
 
+        //写入内容并添加监听器
         channel.writeAndFlush(request).addListener(new ChannelFutureListener() {
             public void operationComplete(ChannelFuture future) throws Exception {
                 writeFuture.setWriteResult(future.isSuccess());
