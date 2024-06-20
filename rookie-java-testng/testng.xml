@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/work/NewIDEAWorkSpace/rookie-project/github-albert-crm/rookie-java-project/rookie-java-testng/src/test/java/com/rookie/bigdata/FixtureTest.java">
+        <classes>
+            <class name="com.rookie.bigdata.FixtureTest">
+                <methods>
+                    <include name="testCase1"/>
+                    <include name="testCase2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

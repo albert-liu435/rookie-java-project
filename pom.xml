@@ -8,6 +8,9 @@
     <artifactId>rookie-java-project</artifactId>
     <version>1.0.0</version>
     <modules>
+
+        <module>rookie-java-testng</module>
+
         <module>rookie-javase</module>
         <module>rookie-netty</module>
 
