@@ -7,22 +7,16 @@
 
     <parent>
         <groupId>com.rookie.bigdata</groupId>
-        <artifactId>rookie-java-project</artifactId>
-        <version>1.0.0</version>
+        <artifactId>rookie-log</artifactId>
+        <version>1.0</version>
     </parent>
-    <artifactId>rookie-log</artifactId>
+    <artifactId>rookie-commons-logging</artifactId>
     <version>1.0</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
-    <name>rookie-log</name>
+    <name>rookie-commons-logging</name>
     <!--  change it to the project's website -->
     <url>http://www.example.com</url>
-
-    <modules>
-        <module>rookie-commons-logging</module>
-        <module>rookie-jul</module>
-        <module>rookie-log4j</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,18 +27,51 @@
         <lombok.version>1.18.30</lombok.version>
     </properties>
 
-
     <dependencies>
+
+        <!-- 测试所用依赖 -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.5.1</version>
+            <!-- 这个不能用7.6以上的版本，不支持jdk8-->
+            <scope>test</scope>
+            <!--            <exclusions>-->
+            <!--                <exclusion>-->
+            <!--                    <artifactId>guice</artifactId>-->
+            <!--                    <groupId>com.google.inject</groupId>-->
+            <!--                </exclusion>-->
+            <!--                <exclusion>-->
+            <!--                    <groupId>org.yaml</groupId>-->
+            <!--                    <artifactId>snakeyaml</artifactId>-->
+            <!--                </exclusion>-->
+            <!--            </exclusions>-->
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+
+
     </dependencies>
 
     <build>
-        <finalName>rookie-rxjava</finalName>
+        <finalName>rookie-javase</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
