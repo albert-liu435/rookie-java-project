@@ -9,6 +9,8 @@
     <version>1.0.0</version>
     <modules>
 
+        <module>rookie-log</module>
+
         <module>rookie-java-testng</module>
 
         <module>rookie-javase</module>
