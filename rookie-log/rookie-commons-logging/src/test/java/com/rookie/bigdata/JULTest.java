@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 /**
  * @Class JULTest
- * @Description
+ * @Description https://blog.csdn.net/qq_41428418/article/details/134995964
  * @Author rookie
  * @Date 2024/6/25 11:33
  * @Version 1.0

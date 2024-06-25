@@ -7,7 +7,7 @@ import java.util.logging.*;
 
 /**
  * @Class JULTest
- * @Description
+ * @Description https://blog.csdn.net/qq_41428418/article/details/134995964
  * @Author rookie
  * @Date 2024/6/20 17:14
  * @Version 1.0
