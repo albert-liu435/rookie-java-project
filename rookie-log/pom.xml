@@ -22,6 +22,7 @@
         <module>rookie-commons-logging</module>
         <module>rookie-jul</module>
         <module>rookie-log4j</module>
+        <module>rookie-log4j2</module>
         <module>rookie-logback</module>
         <module>rookie-slf4j</module>
     </modules>
