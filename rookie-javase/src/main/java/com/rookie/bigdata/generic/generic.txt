@@ -1,0 +1,282 @@
+https://blog.csdn.net/weixin_45395059/article/details/126006369
+
+java常见的泛型的类型参数如下：
+  T ：代表一般的任何类。
+  E ：代表 Element 元素的意思，或者 Exception 异常的意思。
+  K ：代表 Key 的意思。
+  V ：代表 Value 的意思，通常与 K 一起配合使用。
+  S ：代表 Subtype 的意思，文章后面部分会讲解示意。
+
+
+五、类型擦除
+1. 什么是类型擦除
+泛型的本质是将数据类型参数化，它通过擦除的方式来实现，即编译器会在编译期间擦除代码中的所有泛型语法并相应的做出一些类型转换动作。
+换而言之，泛型信息只存在于代码编译阶段，在代码编译结束后，与泛型相关的信息会被擦除掉，专业术语叫做类型擦除。也就是说，成功编译过后的 class 文件中不包含任何泛型信息，泛型信息不会进入到运行时阶段。
+看一个例子，假如我们给 ArrayList 集合传入两种不同的数据类型，并比较它们的类信息。
+
+
+
+3. 什么是泛型通配符
+在现实编码中，确实有这样的需求，希望泛型能够处理某一类型范围内的类型参数，比如某个泛型类和它的子类，为此 Java 引入了泛型通配符这个概念。
+
+泛型通配符有 3 种形式：
+
+<?> ：被称作无限定的通配符。
+<? extends T> ：被称作有上界的通配符。
+<? super T> ：被称作有下界的通配符。
+
+在引入泛型通配符之后，我们便得到了一个在逻辑上可以表示为某一类型参数范围的父类引用类型。举例来说，泛型通配符可以表示 Pair< Integer > 和 Pair< Number > 两者的父类引用类型。
+接下来将分别介绍 3 种形式的泛型通配符。
+
+4. 上界通配符 <? extends T>
+4.1 <? extends T> 的定义
+上界通配符 <? extends T>：T 代表了类型参数的上界，<? extends T>表示类型参数的范围是 T 和 T 的子类。需要注意的是： <? extends T> 也是一个数据类型实参，它和 Number、String、Integer 一样都是一种实际的数据类型。
+
+（1）在泛型的继承中我们说到，ArrayList< Integer > 和 ArrayList< Number > 之间不存在继承关系。而引入上界通配符的概念后，我们便可以在逻辑上将 ArrayList<? extends Number> 看做是 ArrayList< Integer > 的父类，但实质上它们之间没有继承关系。
+
+举例如下：
+
+public class GenericType {
+    public static void main(String[] args) {
+		ArrayList<Number> list01 = new ArrayList<Integer>();// 编译错误
+
+		ArrayList<? extends Number> list02 = new ArrayList<Integer>();// 编译正确
+    }
+逻辑上可以将 ArrayList<? extends Number> 看做是 ArrayList< Integer > 的父类，因此，在使用了上界通配符 <? extends Number> 后，便可以将 ArrayList< Integer > 对象向上转型了。
+（2）ArrayList<? extends Number> 可以代表 ArrayList< Integer >、ArrayList< Float >、… 、ArrayList< Number >中的某一个集合，但我们不能指定 ArrayList<? extends Number> 的数据类型。（这里有点难理解）
+
+public class GenericType {
+    public static void main(String[] args) {
+		ArrayList<? extends Number> list = new ArrayList<>();
+
+		list.add(new Integer(1));// 编译错误
+		list.add(new Float(1.0));// 编译错误
+    }
+}
+
+可以这样理解，ArrayList<? extends Number> 集合表示了：我这个集合可能是 ArrayList< Integer > 集合，也可能是 ArrayList< Float > 集合，… ，还可能是 ArrayList< Number > 集合；但到底是哪一个集合，不能确定；程序员也不能指定。
+
+所以，在上面代码中，创建了一个 ArrayList<? extends Number> 集合 list，但我们并不能往 list 中添加 Integer、Float 等对象，这也说明了 list 集合并不是某个确定了数据类型的集合。
+思考：那既然 ArrayList<? extends Number> 可以代表 ArrayList< Integer > 或 ArrayList< Float >，为什么不能向其中加入 Integer、Float 等对象呢？
+
+其原因是 ArrayList<? extends Number> 表示的是一个未知类型的 ArrayList 集合，它可以代表 ArrayList< Integer >或 ArrayList< Float >… 等集合，但却不能确定它到底是 ArrayList< Integer > 还是 ArrayList< Float > 集合。
+因此，泛型的特性决定了不能往 ArrayList<? extends Number> 集合中加入 Integer 、 Float 等对象，以防止在获取 ArrayList<? extends Number> 集合中元素的时候，产生 ClassCastException 异常。
+那为什么还需要引入上界统配符的概念？---- 答：是为了拓展方法形参中类型参数的范围。
+
+（1）在泛型通配符的引入部分，我们提出了一个问题，有没有办法使得 addPair(Pair< Number> p) 方法接收 Pair< Integer > 对象？而在有了上界通配符的概念后，这个问题便有了解决办法，就是将 addPair() 方法改写。
+
+代码如下：
+
+// 改写前
+public class PairHelper {
+    static int addPair(Pair<Number> p) {
+        Number first = p.getFirst();
+        Number last = p.getLast();
+        return first.intValue() + last.intValue();
+    }
+}
+
+// 改写后
+public class PairHelper {
+    static int addPair(Pair<? extends Number> p) {
+        Number first = p.getFirst();
+  Number last = p.getLast();
+        return first.intValue() + last.intValue();
+    }
+}
+
+改写 addPair() 方法，用 <? extends Number> 替换了 < Number > ，由于 Pair< Integer > 可以向上转型为 Pair<? extends Number> ，所以调用 addPair() 方法时，我们便可以传入 Pair< Integer > 对象了。
+
+除了可以传入 Pair< Integer > 对象，我们还可以传入 Pair< Double > 对象，Pair< BigDecimal > 对象等等，因为 Double 类和 BigDecimal 类也都是 Number 的子类。
+
+
+4.2 <? extends T> 的用法
+上面说到，我们无法确定 ArrayList<? extends Number> 具体是什么数据类型的集合，因此其 add() 方法会受限（即不能往集合中添加任何数据类型的对象）；但是可以往集合中添加 null，因为 null 表示任何类型。
+
+我们可以调用 get() 方法从集合中获取元素，并赋值给集合中的最高父类 Number (即 <? extends T> 的上界)。
+
+（1）上界通配符 <? extends T> 的正确用法：
+public class Test {
+    public static void main(String[] args) {
+    	// 创建一个 ArrayList<Integer> 集合
+        ArrayList<Integer> integerList = new ArrayList<>();
+        integerList.add(1);
+        integerList.add(2);
+        // 将 ArrayList<Integer> 传入 printIntVal() 方法
+        printIntVal(integerList);
+
+		// 创建一个 ArrayList<Float> 集合
+        ArrayList<Float> floatList = new ArrayList<>();
+        floatList.add((float) 1.0);
+        floatList.add((float) 2.0);
+        // 将 ArrayList<Float> 传入 printIntVal() 方法
+        printIntVal(floatList);
+    }
+
+    public static void printIntVal(ArrayList<? extends Number> list) {
+ 		// 遍历传入的集合，并输出集合中的元素
+        for (Number number : list) {
+            System.out.print(number.intValue() + " ");
+        }
+        System.out.println();
+    }
+}
+在 printIntVal() 方法中，其形参为 ArrayList<? extends Number>，因此，可以给该方法传入 ArrayList< Integer >、ArrayList< Float > 等集合。
+
+需要注意的是：在 printIntVal() 方法内部，必须要将传入集合中的元素赋值给Number 对象，而不能赋值给某个子类对象； 是因为根据 ArrayList<? extends Number> 的特性，并不能确定传入集合的数据类型（即不能确定传入的是 ArrayList< Integer > 还是 ArrayList< Float >）。
+
+假设在 printIntVal() 方法中存在下面代码：
+  Integer intNum = (Integer) number;
+若是传入集合为 ArrayList< Float >，则必然会产生ClassCastException 异常。
+
+2）上界通配符 <? extends T> 的错误用法：
+
+public class Test {
+	public static void main(String[] args) {
+		ArrayList<? extends Number> list = new ArrayList();
+		list.add(null);// 编译正确
+		list.add(new Integer(1));// 编译错误
+		list.add(new Float(1.0));// 编译错误
+	}
+
+	public static void fillNumList(ArrayList<? extends Number> list) {
+		list.add(new Integer(0));//编译错误
+		list.add(new Float(1.0));//编译错误
+		list.set(0, new Integer(2));// 编译错误
+		list.set(0, null);// 编译成功，但不建议这样使用
+	}
+}
+在 ArrayList<? extends Number> 集合中，不能添加任何数据类型的对象，只能添加空值 null，因为 null 可以表示任何数据类型。
+4.3 <? extends T> 小结
+一句话总结：使用 extends 通配符表示可以读，不能写。
+
+
+5. 下界通配符 <? super T>
+5.1 <? super T> 的定义
+下界通配符 <? super T>：T 代表了类型参数的下界，<? super T>表示类型参数的范围是 T 和 T 的超类，直至 Object。需要注意的是： <? super T> 也是一个数据类型实参，它和 Number、String、Integer 一样都是一种实际的数据类型。
+
+（1）ArrayList<? super Integer> 在逻辑上表示为 Integer 类以及 Integer 类的所有父类，它可以代表 ArrayList< Integer>、ArrayList< Number >、 ArrayList< Object >中的某一个集合，但实质上它们之间没有继承关系。
+举个例子：
+
+public class GenericType {
+    public static void main(String[] args) {
+		ArrayList<Integer> list01 = new ArrayList<Number>();// 编译错误
+
+		ArrayList<? super Integer> list02 = new ArrayList<Number>();// 编译正确
+    }
+}
+
+逻辑上可以将 ArrayList<? super Integer> 看做是 ArrayList< Number > 的父类，因此，在使用了下界通配符 <? super Integer> 后，便可以将 ArrayList< Number > 对象向上转型了。
+
+（2）ArrayList<? super Integer> 只能表示指定类型参数范围中的某一个集合，但我们不能指定 ArrayList<? super Integer> 的数据类型。（这里有点难理解）
+看一个例子：
+
+public class GenericType {
+    public static void main(String[] args) {
+		ArrayList<? super Number> list = new ArrayList<>();
+
+		list.add(new Integer(1));// 编译正确
+		list.add(new Float(1.0));// 编译正确
+
+		// Object 是 Number 的父类
+		list.add(new Object());// 编译错误
+    }
+}
+这里奇怪的地方出现了，为什么和ArrayList<? extends Number> 集合不同， ArrayList<? super Number> 集合中可以添加 Number 类及其子类的对象呢？
+
+其原因是， ArrayList<? super Number> 的下界是 ArrayList< Number > 。因此，我们可以确定 Number 类及其子类的对象自然可以加入 ArrayList<? super Number> 集合中； 而 Number 类的父类对象就不能加入 ArrayList<? super Number> 集合中了，因为不能确定 ArrayList<? super Number> 集合的数据类型。
+5.2 <? super T> 的用法
+（1）下界通配符 <? super T> 的正确用法：
+
+public class Test {
+	public static void main(String[] args) {
+		// 创建一个 ArrayList<? super Number> 集合
+		ArrayList<Number> list = new ArrayList();
+		// 往集合中添加 Number 类及其子类对象
+		list.add(new Integer(1));
+		list.add(new Float(1.1));
+		// 调用 fillNumList() 方法，传入 ArrayList<Number> 集合
+		fillNumList(list);
+		System.out.println(list);
+	}
+
+	public static void fillNumList(ArrayList<? super Number> list) {
+		list.add(new Integer(0));
+		list.add(new Float(1.0));
+	}
+}
+
+与带有上界通配符的集合ArrayList<? extends T>的用法不同，带有下界通配符的集合ArrayList<? super Number> 中可以添加 Number 类及其子类的对象；ArrayList<? super Number>的下界就是ArrayList<Number>集合，因此，其中必然可以添加 Number 类及其子类的对象；但不能添加 Number 类的父类对象（不包括 Number 类）。
+
+（2）下界通配符 <? super T> 的错误用法：
+
+public class Test {
+    public static void main(String[] args) {
+    	// 创建一个 ArrayList<Integer> 集合
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(new Integer(1));
+        // 调用 fillNumList() 方法，传入 ArrayList<Integer> 集合
+        fillNumList(list);// 编译错误
+    }
+
+    public static void fillNumList(ArrayList<? super Number> list) {
+        list.add(new Integer(0));// 编译正确
+        list.add(new Float(1.0));// 编译正确
+
+		// 遍历传入集合中的元素，并赋值给 Number 对象；会编译错误
+        for (Number number : list) {
+            System.out.print(number.intValue() + " ");
+            System.out.println();
+        }
+        // 遍历传入集合中的元素，并赋值给 Object 对象；可以正确编译
+        // 但只能调用 Object 类的方法，不建议这样使用
+        for (Object obj : list) {
+            System.out.println(obj);使用
+        }
+    }
+}
+注意，ArrayList<? super Number> 代表了 ArrayList< Number >、 ArrayList< Object > 中的某一个集合，而 ArrayList< Integer > 并不属于 ArrayList<? super Number> 限定的范围，因此，不能往 fillNumList() 方法中传入 ArrayList< Integer > 集合。
+
+并且，不能将传入集合的元素赋值给 Number 对象，因为传入的可能是 ArrayList< Object > 集合，向下转型可能会产生ClassCastException 异常。
+
+不过，可以将传入集合的元素赋值给 Object 对象，因为 Object 是所有类的父类，不会产生ClassCastException 异常，但这样的话便只能调用 Object 类的方法了，不建议这样使用。
+5.3 <? super T> 小结
+一句话总结：使用 super 通配符表示可以写，不能读。
+
+6. 无限定通配符 <?>
+我们已经讨论了<? extends T>和<? super T>作为方法参数的作用。实际上，Java 的泛型还允许使用无限定通配符<?>，即只定义一个?符号。
+
+无界通配符<?>：? 代表了任何一种数据类型，能代表任何一种数据类型的只有 null。需要注意的是： <?> 也是一个数据类型实参，它和 Number、String、Integer 一样都是一种实际的数据类型。
+
+注意：Object 本身也算是一种数据类型，但却不能代表任何一种数据类型，所以 ArrayList< Object > 和 ArrayList<?> 的含义是不同的，前者类型是 Object，也就是继承树的最高父类，而后者的类型完全是未知的；ArrayList<?> 是 ArrayList< Object > 逻辑上的父类。
+
+（1）ArrayList<?> 在逻辑上表示为所有数据类型的父类，它可以代表 ArrayList< Integer>、ArrayList< Number >、ArrayList< Object >中的某一个集合，但实质上它们之间没有继承关系。
+举例如下：
+
+public class GenericType {
+	public static void main(String[] args) {
+        ArrayList<Integer> list01 = new ArrayList<>(123, 456);
+        ArrayList<?> list02 = list01; // 安全地向上转型
+    }
+}
+
+上述代码是可以正常编译运行的，因为 ArrayList<?> 在逻辑上是 ArrayList< Integer > 的父类，可以安全地向上转型。
+（2）ArrayList<?> 既没有上界也没有下界，因此，它可以代表所有数据类型的某一个集合，但我们不能指定 ArrayList<?> 的数据类型。
+举例如下：
+
+public class GenericType {
+	public static void main(String[] args) {
+        ArrayList<?> list = new ArrayList<>();
+        list.add(null);// 编译正确
+        Object obj = list.get(0);// 编译正确
+
+		list.add(new Integer(1));// 编译错误
+		Integer num = list.get(0);// 编译错误
+    }
+}
+
+ArrayList<?> 集合的数据类型是不确定的，因此我们只能往集合中添加 null；而我们从 ArrayList<?> 集合中取出的元素，也只能赋值给 Object 对象，不然会产生ClassCastException 异常（原因可以结合上界和下界通配符理解）。
+（3）大多数情况下，可以用类型参数 < T > 代替 <?> 通配符。
+
+
+https://blog.csdn.net/weixin_45395059/article/details/126006369
