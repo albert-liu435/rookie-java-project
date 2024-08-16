@@ -44,6 +44,7 @@ class ConsumerAcceptTest {
         integerConsumer.accept(3);
 
 
+
     }
 
 }
