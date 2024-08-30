@@ -9,41 +9,42 @@
     <version>1.0.0</version>
     <modules>
 
-        <module>rookie-log</module>
-
-        <module>rookie-java-testng</module>
-
         <module>rookie-javase</module>
-        <module>rookie-netty</module>
+<!--        <module>rookie-log</module>-->
 
-        <module>rookie-rxjava</module>
+<!--        <module>rookie-java-testng</module>-->
+
+<!--        <module>rookie-javase</module>-->
+<!--        <module>rookie-netty</module>-->
+
+<!--        <module>rookie-rxjava</module>-->
 
     </modules>
     <packaging>pom</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <java.version>1.8</java.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
 
         <!--        <java.version>17</java.version>-->
         <!--        <maven.compiler.source>17</maven.compiler.source>-->
         <!--        <maven.compiler.target>17</maven.compiler.target>-->
-        <netty_version>4.1.36.Final</netty_version>
+<!--        <netty_version>4.1.36.Final</netty_version>-->
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>${netty_version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.netty</groupId>-->
+<!--            <artifactId>netty-all</artifactId>-->
+<!--            <version>${netty_version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>commons-lang</groupId>-->
+<!--            <artifactId>commons-lang</artifactId>-->
+<!--            <version>2.6</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 
