@@ -4,7 +4,7 @@ package com.rookie.bigdata.designpatterns.adapter;
  * @Class VlcPlayer
  * @Description
  * @Author rookie
- * @Date 2023/5/6 15:27
+ * @Date 2024/9/3 14:10
  * @Version 1.0
  */
 public class VlcPlayer implements AdvancedMediaPlayer{

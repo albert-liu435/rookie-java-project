@@ -4,7 +4,7 @@ package com.rookie.bigdata.designpatterns.adapter;
  * @Class AudioPlayer
  * @Description
  * @Author rookie
- * @Date 2023/5/6 15:46
+ * @Date 2024/9/3 14:11
  * @Version 1.0
  */
 public class AudioPlayer implements MediaPlayer {

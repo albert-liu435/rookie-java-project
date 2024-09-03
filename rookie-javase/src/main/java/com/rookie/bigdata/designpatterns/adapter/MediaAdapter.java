@@ -2,11 +2,9 @@ package com.rookie.bigdata.designpatterns.adapter;
 
 /**
  * @Class MediaAdapter
- * @Description https://blog.csdn.net/TurboAnho/article/details/126348254
- * <p>
- * 把一个类的接口变换成客户端所期待的另一个接口，从而使因原本接口不匹配而无法在一起工作的两个类能够在一起工作。
+ * @Description
  * @Author rookie
- * @Date 2023/5/6 15:46
+ * @Date 2024/9/3 14:12
  * @Version 1.0
  */
 public class MediaAdapter implements MediaPlayer {

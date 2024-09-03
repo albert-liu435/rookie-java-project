@@ -4,7 +4,7 @@ package com.rookie.bigdata.designpatterns.adapter;
  * @Class Mp4Player
  * @Description
  * @Author rookie
- * @Date 2023/5/6 15:28
+ * @Date 2024/9/3 14:13
  * @Version 1.0
  */
 public class Mp4Player implements AdvancedMediaPlayer{

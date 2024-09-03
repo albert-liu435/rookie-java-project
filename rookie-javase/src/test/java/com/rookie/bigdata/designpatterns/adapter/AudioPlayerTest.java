@@ -2,13 +2,12 @@ package com.rookie.bigdata.designpatterns.adapter;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Class AudioPlayerTest
  * @Description
  * @Author rookie
- * @Date 2023/5/6 15:47
+ * @Date 2024/9/3 14:13
  * @Version 1.0
  */
 class AudioPlayerTest {
