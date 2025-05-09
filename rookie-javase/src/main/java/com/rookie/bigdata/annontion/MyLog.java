@@ -27,5 +27,12 @@ public class MyLog {
         }
 
 
+        System.setProperty("cloud.open.url", "https://openapi-fxg.best2cn.wmask.net:4501");
+
+        String getenv = System.getenv("cloud.open.url");
+        System.out.println(getenv);
+        String property = System.getProperty("cloud.open.url");
+        System.out.println(property);
+
     }
 }
