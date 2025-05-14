@@ -1,14 +1,13 @@
-package com.rookie.bigdata.designpatterns.factory;
+package com.rookie.bigdata.designpatterns.factory.runoob;
 
 /**
  * @Class FactoryPatternDemo
- * @Description TODO
+ * @Description
  * @Author rookie
- * @Date 2025/5/14 15:23
+ * @Date 2025/5/14 20:59
  * @Version 1.0
  */
 public class FactoryPatternDemo {
-
 
     public static void main(String[] args) {
         ShapeFactory shapeFactory = new ShapeFactory();

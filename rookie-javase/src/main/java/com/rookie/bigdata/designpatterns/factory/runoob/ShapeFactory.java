@@ -1,10 +1,10 @@
-package com.rookie.bigdata.designpatterns.factory;
+package com.rookie.bigdata.designpatterns.factory.runoob;
 
 /**
  * @Class ShapeFactory
- * @Description 创建一个工厂，生成基于给定信息的实体类的对象。
+ * @Description
  * @Author rookie
- * @Date 2025/5/14 15:23
+ * @Date 2025/5/14 20:59
  * @Version 1.0
  */
 public class ShapeFactory {
