@@ -1,10 +1,10 @@
-package com.rookie.bigdata.designpatterns.factory.abstractfactory.two;
+package com.rookie.bigdata.designpatterns.factory.abstractfactory.refactoringguru;
 
 /**
  * @Class WindowsFactory
  * @Description
  * @Author rookie
- * @Date 2025/5/14 13:42
+ * @Date 2025/5/15 16:58
  * @Version 1.0
  */
 /**
