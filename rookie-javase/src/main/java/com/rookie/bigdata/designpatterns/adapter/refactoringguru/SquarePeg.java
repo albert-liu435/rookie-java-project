@@ -1,4 +1,4 @@
-package com.rookie.bigdata.designpatterns.adapter.two;
+package com.rookie.bigdata.designpatterns.adapter.refactoringguru;
 
 /**
  * @Class SquarePeg
