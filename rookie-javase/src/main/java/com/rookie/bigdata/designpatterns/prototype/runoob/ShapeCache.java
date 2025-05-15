@@ -1,4 +1,4 @@
-package com.rookie.bigdata.designpatterns.prototype;
+package com.rookie.bigdata.designpatterns.prototype.runoob;
 
 /**
  * @Class ShapeCache
