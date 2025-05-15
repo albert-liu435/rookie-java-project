@@ -1,8 +1,7 @@
 package com.rookie.bigdata.designpatterns.adapter;
 
+import com.rookie.bigdata.designpatterns.adapter.runoob.AudioPlayer;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Class AudioPlayerTest

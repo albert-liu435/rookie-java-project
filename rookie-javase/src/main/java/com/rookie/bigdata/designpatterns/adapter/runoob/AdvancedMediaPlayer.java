@@ -1,4 +1,4 @@
-package com.rookie.bigdata.designpatterns.adapter;
+package com.rookie.bigdata.designpatterns.adapter.runoob;
 
 /**
  * @Class AdvancedMediaPlayer
