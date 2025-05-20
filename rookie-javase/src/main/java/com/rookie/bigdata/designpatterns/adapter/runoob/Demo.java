@@ -1,19 +1,20 @@
-package com.rookie.bigdata.designpatterns.adapter;
-
-import com.rookie.bigdata.designpatterns.adapter.runoob.AudioPlayer;
-import org.junit.jupiter.api.Test;
+package com.rookie.bigdata.designpatterns.adapter.runoob;
 
 /**
- * @Class AudioPlayerTest
- * @Description
+ * @Class Demo
+ * @Description https://www.runoob.com/design-pattern/adapter-pattern.html
  * @Author rookie
- * @Date 2023/5/6 15:47
+ * @Date 2025/5/14 15:05
  * @Version 1.0
  */
-class AudioPlayerTest {
+public class Demo {
 
-    @Test
-    void play() {
+
+//    void play() {
+
+    public static void main(String[] args) {
+
+
         AudioPlayer audioPlayer = new AudioPlayer();
 
         audioPlayer.play("mp3", "beyond the horizon.mp3");
@@ -21,4 +22,5 @@ class AudioPlayerTest {
         audioPlayer.play("vlc", "far far away.vlc");
         audioPlayer.play("avi", "mind me.avi");
     }
+
 }
