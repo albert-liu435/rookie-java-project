@@ -2,6 +2,9 @@ package com.rookie.bigdata;
 
 import sun.reflect.Reflection;
 
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * @Class ReflectionTestMain
  * @Description
@@ -18,5 +21,17 @@ public class ReflectionTestMain {
         Class<?> callerClass = Reflection.getCallerClass(1);
         String s = callerClass.toString();
         System.out.println(s);
+
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+//        account.setStartDate(calendar.getTime());
+        calendar.add(Calendar.YEAR, 1);
+        calendar.add(Calendar.DAY_OF_MONTH, -1);
+        System.out.println(calendar.getTime());
+
+
+
+
     }
 }
